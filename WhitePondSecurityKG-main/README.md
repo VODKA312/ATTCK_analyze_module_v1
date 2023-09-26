@@ -133,10 +133,4 @@ python main.py
 项目的table数据支持数据导出，可在不通页面导出需要的数据
 
 
-#### 技术交流
-可开issue中或微信群中反馈，微信群二维码如下：
-
-
-![](/md_data/weixin_code.jpg)
-
 
