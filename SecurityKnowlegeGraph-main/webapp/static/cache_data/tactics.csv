@@ -1,0 +1,85 @@
+ID,name,description,url,created,last modified,version,name_zh,description_zh
+TA0009,Collection,"The adversary is trying to gather data of interest to their goal.
+
+Collection consists of techniques adversaries may use to gather information and the sources information is collected from that are relevant to following through on the adversary's objectives. Frequently, the next goal after collecting data is to steal (exfiltrate) the data. Common target sources include various drive types, browsers, audio, video, and email. Common collection methods include capturing screenshots and keyboard input.",https://attack.mitre.org/tactics/TA0009,17 October 2018,19 July 2019,1.0,收集,"对手正在试图收集感兴趣的数据。
+
+收集包括对手可以用来收集信息的技术，并从与对手的目标进行跟随有关的信息中收集信息。通常，收集数据后的下一个目标是窃取（渗透）数据。常见目标来源包括各种驱动器类型，浏览器，音频，视频和电子邮件。常见的收集方法包括捕获屏幕截图和键盘输入。"
+TA0011,Command and Control,"The adversary is trying to communicate with compromised systems to control them.
+
+Command and Control consists of techniques that adversaries may use to communicate with systems under their control within a victim network. Adversaries commonly attempt to mimic normal, expected traffic to avoid detection. There are many ways an adversary can establish command and control with various levels of stealth depending on the victim’s network structure and defenses.",https://attack.mitre.org/tactics/TA0011,17 October 2018,19 July 2019,1.0,命令与控制,"对手试图与受损的系统进行通信以控制它们。
+
+命令和控制由对手可能用来与受害者网络中控制系统进行通信的技术组成。对手通常试图模仿正常，预期流量以避免检测。对手可以通过多种方式来建立和控制各种隐形的命令和控制，具体取决于受害者的网络结构和防御。"
+TA0006,Credential Access,"The adversary is trying to steal account names and passwords.
+
+Credential Access consists of techniques for stealing credentials like account names and passwords. Techniques used to get credentials include keylogging or credential dumping. Using legitimate credentials can give adversaries access to systems, make them harder to detect, and provide the opportunity to create more accounts to help achieve their goals.",https://attack.mitre.org/tactics/TA0006,17 October 2018,19 July 2019,1.0,凭证访问,"对手试图窃取帐户名和密码。
+
+凭证访问包括窃取帐户名称和密码等凭据的技术。用于获得凭据的技术包括钥匙扣或凭据转储。使用合法的凭据可以使对手访问系统，使它们更难检测到，并提供机会创建更多帐户以帮助实现其目标。"
+TA0005,Defense Evasion,"The adversary is trying to avoid being detected.
+
+Defense Evasion consists of techniques that adversaries use to avoid detection throughout their compromise. Techniques used for defense evasion include uninstalling/disabling security software or obfuscating/encrypting data and scripts. Adversaries also leverage and abuse trusted processes to hide and masquerade their malware. Other tactics’ techniques are cross-listed here when those techniques include the added benefit of subverting defenses. ",https://attack.mitre.org/tactics/TA0005,17 October 2018,19 July 2019,1.0,防御绕过,"对手试图避免被发现。
+
+防御逃避包括对手在整个妥协过程中避免发现的技术。用于防御逃避的技术包括卸载/禁用安全软件或混淆/加密数据和脚本。对手还利用和滥用虐待的过程来隐藏和伪装他们的恶意软件。当这些技术包含颠覆防御能力的额外好处时，其他策略的技术将在此处列出。"
+TA0007,Discovery,"The adversary is trying to figure out your environment.
+
+Discovery consists of techniques an adversary may use to gain knowledge about the system and internal network. These techniques help adversaries observe the environment and orient themselves before deciding how to act. They also allow adversaries to explore what they can control and what’s around their entry point in order to discover how it could benefit their current objective. Native operating system tools are often used toward this post-compromise information-gathering objective. ",https://attack.mitre.org/tactics/TA0007,17 October 2018,19 July 2019,1.0,发现,"对手试图找出您的环境。
+
+发现包括对手可能用来获取有关系统和内部网络的知识的技术。这些技术有助于对手在决定采取行动之前观察环境并定向自己。他们还允许对手探索他们可以控制什么以及在入口点周围的内容，以发现它如何使他们的目前目标受益。本地操作系统工具通常用于此后磁后信息收集目标。"
+TA0002,Execution,"The adversary is trying to run malicious code.
+
+Execution consists of techniques that result in adversary-controlled code running on a local or remote system. Techniques that run malicious code are often paired with techniques from all other tactics to achieve broader goals, like exploring a network or stealing data. For example, an adversary might use a remote access tool to run a PowerShell script that does Remote System Discovery. ",https://attack.mitre.org/tactics/TA0002,17 October 2018,19 July 2019,1.0,执行,"对手正在尝试运行恶意代码。
+
+执行包括导致在本地或远程系统上运行的对手控制的代码的技术。运行恶意代码的技术通常与所有其他策略的技术配对，以实现更广泛的目标，例如探索网络或窃取数据。例如，对手可以使用远程访问工具运行远程系统发现的PowerShell脚本。"
+TA0010,Exfiltration,"The adversary is trying to steal data.
+
+Exfiltration consists of techniques that adversaries may use to steal data from your network. Once they’ve collected data, adversaries often package it to avoid detection while removing it. This can include compression and encryption. Techniques for getting data out of a target network typically include transferring it over their command and control channel or an alternate channel and may also include putting size limits on the transmission.",https://attack.mitre.org/tactics/TA0010,17 October 2018,19 July 2019,1.0,数据窃取,"对手试图窃取数据。
+
+渗透包括对手可能用来从您的网络中窃取数据的技术。一旦他们收集了数据，对手通常会包装它，以避免在删除数据时进行检测。这可以包括压缩和加密。从目标网络中获取数据的技术通常包括将其传输到其命令和控制频道或替代通道上，还可能包括在变速箱上限制尺寸限制。"
+TA0040,Impact,"The adversary is trying to manipulate, interrupt, or destroy your systems and data.
+ 
+Impact consists of techniques that adversaries use to disrupt availability or compromise integrity by manipulating business and operational processes. Techniques used for impact can include destroying or tampering with data. In some cases, business processes can look fine, but may have been altered to benefit the adversaries’ goals. These techniques might be used by adversaries to follow through on their end goal or to provide cover for a confidentiality breach.",https://attack.mitre.org/tactics/TA0040,14 March 2019,25 July 2019,1.0,危害,"对手试图操纵，中断或破坏您的系统和数据。
+ 
+影响包括对手用来通过操纵业务和运营流程来破坏可用性或损害完整性的技术。用于影响的技术可能包括破坏或篡改数据。在某些情况下，业务流程看起来不错，但可能已更改以使对手的目标受益。对手可能会使用这些技术来实现其最终目标或为违反机密性的掩护。"
+TA0001,Initial Access,"The adversary is trying to get into your network.
+
+Initial Access consists of techniques that use various entry vectors to gain their initial foothold within a network. Techniques used to gain a foothold include targeted spearphishing and exploiting weaknesses on public-facing web servers. Footholds gained through initial access may allow for continued access, like valid accounts and use of external remote services, or may be limited-use due to changing passwords.",https://attack.mitre.org/tactics/TA0001,17 October 2018,19 July 2019,1.0,初始访问,"对手试图进入您的网络。
+
+初始访问由使用各种输入向量来获得网络中的初始立足点的技术组成。用于获得立足点的技术包括针对性的矛盾和针对公共的网络服务器上的弱点。通过初始访问获得的立足点可能允许继续访问，例如有效的帐户和外部远程服务的使用，或者由于密码更改而可能是限量使用。"
+TA0008,Lateral Movement,"The adversary is trying to move through your environment.
+
+Lateral Movement consists of techniques that adversaries use to enter and control remote systems on a network. Following through on their primary objective often requires exploring the network to find their target and subsequently gaining access to it. Reaching their objective often involves pivoting through multiple systems and accounts to gain. Adversaries might install their own remote access tools to accomplish Lateral Movement or use legitimate credentials with native network and operating system tools, which may be stealthier. ",https://attack.mitre.org/tactics/TA0008,17 October 2018,19 July 2019,1.0,横向运动,"对手试图在您的环境中移动。
+
+横向运动包括对手用来输入和控制网络上远程系统的技术。遵循其主要目标通常需要探索网络以找到其目标并随后获得访问权限。达到目标通常涉及通过多个系统和帐户枢转。对手可能会安装自己的远程访问工具来完成横向运动或使用本机网络和操作系统工具使用合法的凭证，这可能更隐形。"
+TA0003,Persistence,"The adversary is trying to maintain their foothold.
+
+Persistence consists of techniques that adversaries use to keep access to systems across restarts, changed credentials, and other interruptions that could cut off their access. Techniques used for persistence include any access, action, or configuration changes that let them maintain their foothold on systems, such as replacing or hijacking legitimate code or adding startup code. ",https://attack.mitre.org/tactics/TA0003,17 October 2018,19 July 2019,1.0,持久化,"对手试图维持自己的立足点。
+
+持久性由对手用来在重新启动，更改凭据以及其他可能切断其访问的中断的技术中访问系统的技术。用于持久性的技术包括任何访问，操作或配置更改，使它们在系统上保持立足点，例如更换或劫持合法代码或添加启动代码。"
+TA0004,Privilege Escalation,"The adversary is trying to gain higher-level permissions.
+
+Privilege Escalation consists of techniques that adversaries use to gain higher-level permissions on a system or network. Adversaries can often enter and explore a network with unprivileged access but require elevated permissions to follow through on their objectives. Common approaches are to take advantage of system weaknesses, misconfigurations, and vulnerabilities. Examples of elevated access include: 
+
+* SYSTEM/root level
+* local administrator
+* user account with admin-like access 
+* user accounts with access to specific system or perform specific function
+
+These techniques often overlap with Persistence techniques, as OS features that let an adversary persist can execute in an elevated context.  ",https://attack.mitre.org/tactics/TA0004,17 October 2018,06 January 2021,1.0,权限提升,"对手试图获得更高级别的权限。
+
+特权升级包括对手用来获得系统或网络上更高级别权限的技术。对手通常可以输入和探索具有无特权访问的网络，但需要提高权限才能遵循其目标。常见的方法是利用系统弱点，配置错误和脆弱性。升高访问的示例包括：
+
+*系统/根级
+*本地管理员
+*带有管理员访问的用户帐户
+*具有访问特定系统或执行特定功能的用户帐户
+
+这些技术通常与持久性技术重叠，因为让对手持续的操作系统可以在高架上下文中执行。"
+TA0043,Reconnaissance,"The adversary is trying to gather information they can use to plan future operations.
+
+Reconnaissance consists of techniques that involve adversaries actively or passively gathering information that can be used to support targeting. Such information may include details of the victim organization, infrastructure, or staff/personnel. This information can be leveraged by the adversary to aid in other phases of the adversary lifecycle, such as using gathered information to plan and execute Initial Access, to scope and prioritize post-compromise objectives, or to drive and lead further Reconnaissance efforts.",https://attack.mitre.org/tactics/TA0043,02 October 2020,18 October 2020,1.0,侦察,"对手正在尝试收集他们可以使用的信息来计划未来的操作。
+
+侦察包括涉及对手积极或被动地收集可用于支持目标的信息的技术。这些信息可能包括受害者组织，基础设施或员工/人员的详细信息。对手可以利用此信息来帮助对手生命周期的其他阶段，例如使用收集的信息来计划和执行初始访问，范围和优先考虑后启动后的目标，或者驱动并领导进一步的侦察工作。"
+TA0042,Resource Development,"The adversary is trying to establish resources they can use to support operations.
+
+Resource Development consists of techniques that involve adversaries creating, purchasing, or compromising/stealing resources that can be used to support targeting. Such resources include infrastructure, accounts, or capabilities. These resources can be leveraged by the adversary to aid in other phases of the adversary lifecycle, such as using purchased domains to support Command and Control, email accounts for phishing as a part of Initial Access, or stealing code signing certificates to help with Defense Evasion.",https://attack.mitre.org/tactics/TA0042,30 September 2020,30 September 2020,1.0,资源开发,"对手正在尝试建立可以用来支持操作的资源。
+
+资源开发由涉及对手创建，购买或妥协/窃取资源的技术组成，这些资源可用于支持目标。这样的资源包括基础架构，帐户或功能。对手可以利用这些资源来协助对手生命周期的其他阶段，例如使用购买的域来支持命令和控制，电子邮件帐户作为网络钓鱼作为初始访问的一部分或窃取代码签名证书以帮助防御逃避逃避逃避的证书。"
