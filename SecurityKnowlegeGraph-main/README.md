@@ -13,13 +13,12 @@
     * neo4j_conf            neo4j数据库交互
     * services                 视图逻辑
       * attack              attack管理
-      * information   情报命中
-      * log_query       情报查询
+      * information           情报命中
+      * log_query             情报查询
       * rule                 命中规则
-      * threaten         威胁命中 
+      * threaten             威胁命中 
     * static                 静态文件
     * templates              html页面
-    * urls                   接口路由
 
 ### 环境要求
 
