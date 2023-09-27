@@ -6,8 +6,8 @@ import pandas as pd
 from py2neo import Graph, Node, Relationship, NodeMatcher
 from django.conf import settings
 
-graph = Graph(settings.NEO4J_URL, auth=(settings.NEO4J_USER, settings.NEO4J_PASSWORD))
-# graph = Graph("neo4j://localhost:7687", auth=('neo4j', '123456'))
+# graph = Graph(settings.NEO4J_URL, auth=(settings.NEO4J_USER, settings.NEO4J_PASSWORD))
+graph = Graph("neo4j://localhost:7687", auth=('neo4j', 'cong18559116656.'))
 
 matcher = NodeMatcher(graph)
 
@@ -310,8 +310,14 @@ def create_relation(id_judge, target_type, target_id,
 
 def load_graph(cache_path):
 
+    # file_set 是一个空的字典，用于存储不同类型文件的路径。
     file_set = {}
+    # 遍历指定目录 cache_path 下的所有文件，使用 os.listdir(cache_path) 获取目录下的文件列表。
     for file in os.listdir(cache_path):
+        # 对于每个文件，首先提取文件名，去掉文件扩展名（通过 file.split('.')[0]），
+        # 并将其存储在 file_name 变量中。
+        # 如果名称对的上，就跳过检查。如果对不上，就加入cache_path的全名称，将文件路径添加到 file_set 字典中，
+        # 以文件名（不包括扩展名）作为键，文件的完整路径作为值。这样，就创建了一个字典，其中包含了不同类型文件的路径信息。
         file_name = file.split('.')[0]
         if file_name == 'Enterprise ATT&CK matrix':
             pass
@@ -319,6 +325,7 @@ def load_graph(cache_path):
             file_data = os.path.join(cache_path, file)
             file_set.update({file_name: file_data})
 
+    # 构建名称-路径字典
     tactic_path = file_set['tactics']
     citations_path = file_set['citations']
     datasource_path = file_set['datasources']
@@ -326,7 +333,6 @@ def load_graph(cache_path):
     groups_path = file_set['groups']
     mitigations_path = file_set['mitigations']
     campaigns_path = file_set['campaigns']
-
     tech_path = file_set['techniques']
     relation_path = file_set['relationships']
     
@@ -335,29 +341,35 @@ def load_graph(cache_path):
         graph.delete_all()
     except Exception as e:
         print(e)
+    # 创建Tactics 战术节点信息以及节点关系
     get_NodeRelation(tactic_path, 'Tactics')
     tactic = time.time()
     print(f"创建* 战术 *共计时--{tactic-start}")
+    # 创建Citations 引用节点信息以及节点关系
     get_NodeRelation(citations_path, 'Citations')
     citation = time.time()
     print(f"创建* 引用 *共计时--{citation - tactic}")
+    # 创建数据节点信息以及节点关系
     get_datasources(datasource_path)
     datasource = time.time()
     print(f"创建* 数据 *共计时--{datasource - citation}")
-
+    # 创建软件节点信息以及节点关系
     get_NodeRelation(software_path, 'Software', True, 'Citations', 'citations of')
     software = time.time()
     print(f"创建* 软件 *共计时--{software - datasource}")
-
+    # 创建组织节点信息以及节点关系
     get_NodeRelation(groups_path, 'Groups', True, 'Citations', 'citations of')
     groups = time.time()
     print(f"创建* 组织 *共计时--{groups - software}")
+    # 创建缓解措施节点信息以及节点关系
     get_NodeRelation(mitigations_path, 'Mitigations', True, 'Citations', 'citations of')
     mitigations = time.time()
     print(f"创建* 缓解措施 *共计时--{mitigations - groups}")
+    # 创建战役节点信息以及节点关系
     get_NodeRelation(campaigns_path, 'Campaign', True, 'Citations', 'citations of')
     campaigns = time.time()
     print(f"创建* 战役 *共计时--{campaigns - mitigations}")
+
     get_techniques(tech_path)
     tech = time.time()
     print(f"创建* 技术/子技术&引用 *共计时--{tech - mitigations}")
@@ -368,8 +380,24 @@ def load_graph(cache_path):
 
 
 
+# if __name__ == '__main__':
+#     cache_path = '../../static/cache_data'
+#     load_graph(cache_path)
+
+# 前端传入的数据放在cache_data里
+# 如果写死的话就直接把cache_data拿掉
+# 第一级 .. attack_manage
+# 第二级 .. neo4j_conf 
+# 第三级 .. webapp
+# 第四级 .. SecurityKnowlegeGraph-main
+# 第五级 .. 根目录
 if __name__ == '__main__':
-    cache_path = '../../static/cache_data'
+    
+# 打印当前工作目录
+    print("Current working directory:", os.getcwd())
+    cache_path = '../DataSource/cache_data'
+    if not os.path.exists(cache_path):
+        print(f"Directory '{cache_path}' does not exist.")
     load_graph(cache_path)
 
 

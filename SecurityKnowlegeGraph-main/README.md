@@ -1,6 +1,6 @@
 ### 白泽（WhitePondSecurityKG）
 
-​         ATT&CK知识图谱是一个通用的网络安全基础运营平台，命名为“白泽(平台英文名称为：White Pond Security Knowledage Graph, 简称WhitePondSecurityKG，缩写为WPSKG)”，计划满足日常网络安全综合分析、ATP监测、攻击溯源等场景需求，同时解决在大规模复杂环境场景下遇到的稳定性和性能问题，打造国内首个大型安全知识图谱。
+​ATT&CK知识图谱是一个通用的网络安全基础运营平台，命名为“白泽(平台英文名称为：White Pond Security Knowledage Graph, 简称WhitePondSecurityKG，缩写为WPSKG)”，计划满足日常网络安全综合分析、ATP监测、攻击溯源等场景需求，同时解决在大规模复杂环境场景下遇到的稳定性和性能问题，打造国内首个大型安全知识图谱。
 
       项目采用了Noe4J和Python Django结合架构，在知识抽取、数据聚合、标识建立、关系搭建、自然语言处理、模型预训练等技术，降低在分析过程的漏报与误报情况。目前集成了Red Team、kafka、netflow、log。
 
@@ -55,6 +55,8 @@ git clone
 
 创建虚拟环境并激活
 
+注：这里的venv是你设置的虚拟环境名称。
+
 ```
 python3 -m venv venv
 . venv/bin/activate
@@ -88,11 +90,6 @@ password: cong18559116656.
 python manage.py runserver
 ```
 
-
-启动后，登录http://localhost:8000访问项目
-
-http://localhost:8000/admin/ 创建管理用户   默认 admin/admin
-
 启动日志上报功能：
 
 ```Bash
@@ -101,7 +98,12 @@ python main.py
 ```
 
 ### 使用说明
-
+#### 启动创建图谱功能
+```Bash
+python webapp/neo4j_conf/attack_manage/cretate_graph.py
+```
+#### neo4j网页版查询
+http://localhost:7474 
 #### 首页
 首页： 数据的视图展示
 
