@@ -386,11 +386,6 @@ def load_graph(cache_path):
 
 # 前端传入的数据放在cache_data里
 # 如果写死的话就直接把cache_data拿掉
-# 第一级 .. attack_manage
-# 第二级 .. neo4j_conf 
-# 第三级 .. webapp
-# 第四级 .. SecurityKnowlegeGraph-main
-# 第五级 .. 根目录
 if __name__ == '__main__':
     
 # 打印当前工作目录
