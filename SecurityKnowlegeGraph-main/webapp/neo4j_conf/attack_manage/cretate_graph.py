@@ -390,7 +390,7 @@ if __name__ == '__main__':
     
 # 打印当前工作目录
     print("Current working directory:", os.getcwd())
-    cache_path = '../DataSource/cache_data'
+    cache_path = '../../../../DataSource/cache_data/'
     if not os.path.exists(cache_path):
         print(f"Directory '{cache_path}' does not exist.")
     load_graph(cache_path)
