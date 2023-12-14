@@ -17,7 +17,7 @@ for i in technique_ids:
         high_frequency_id.append(j)
 
 # 读取JSON文件
-with open('../clustering/cluster_data_train_pre0_cutoff4.json', 'r') as json_file:
+with open('../clustering/cluster_data_pre0_cutoff4.json', 'r') as json_file:
     data_clustering = json.load(json_file)
 # 创建一个空的DataFrame来存储technique_id_1和technique_id_2
 columns = ['technique_id_1', 'technique_id_2']
@@ -46,8 +46,7 @@ def generate_technique_relations(data, min_usage_count):
 
     return df
 
-# 调用函数并生成excel文件
-result_df = generate_technique_relations(data, 20)
+result_df = generate_technique_relations(data, 25)
 result_df = result_df.drop_duplicates()
 
 # 统计高频节点不存在的次数
@@ -77,5 +76,5 @@ print(high_frequency_not_exist)
 print(result_df)
 
 result_df = result_df.drop_duplicates()
-result_df.to_excel('../DataSource/technique_relations_cluster_data_train_pre0_cutoff4.xlsx', sheet_name='inner_relationship', index=False, engine='openpyxl')
+result_df.to_excel('../DataSource/technique_relations_cluster_data_pre0_cutoff4.xlsx', sheet_name='inner_relationship', index=False, engine='openpyxl')
 

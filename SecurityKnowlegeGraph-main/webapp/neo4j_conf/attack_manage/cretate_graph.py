@@ -4,12 +4,11 @@ import time
 from json import dumps
 import pandas as pd
 from py2neo import Graph, Node, Relationship, NodeMatcher
-from django.conf import settings
+# from django.conf import settings
 
 # graph = Graph(settings.NEO4J_URL, auth=(settings.NEO4J_USER, settings.NEO4J_PASSWORD))
-graph = Graph("neo4j://localhost:7687", auth=('neo4j', 'cong18559116656.'))
-
-matcher = NodeMatcher(graph)
+# graph = Graph("neo4j://localhost:7687", auth=('neo4j', 'cong18559116656.'))
+# matcher = NodeMatcher(graph)
 
 
 def get_techniques(tech_path):
@@ -229,7 +228,6 @@ def relationships(relation_path):
     df = df.fillna('')
     for index in df.index:
         info_all = df.iloc[index, :]
-        
         source_name = info_all['source name'].strip()
         target_id = info_all['target ID'].strip()
         mapping_type = info_all['mapping type'].strip()
@@ -381,31 +379,10 @@ def load_graph(cache_path):
 
 
 # if __name__ == '__main__':
-#     cache_path = '../../static/cache_data'
-#     load_graph(cache_path)
-
-# 前端传入的数据放在cache_data里
-# 如果写死的话就直接把cache_data拿掉
-if __name__ == '__main__':
     
-# 打印当前工作目录
-    print("Current working directory:", os.getcwd())
-    cache_path = '../../../../DataSource/cache_data/'
-    if not os.path.exists(cache_path):
-        print(f"Directory '{cache_path}' does not exist.")
-    load_graph(cache_path)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# # 打印当前工作目录
+#     print("Current working directory:", os.getcwd())
+#     cache_path = '../../../../DataSource/cache_data/'
+#     if not os.path.exists(cache_path):
+#         print(f"Directory '{cache_path}' does not exist.")
+#     load_graph(cache_path)
